@@ -5,15 +5,16 @@ function CountryInfo(props) {
   let theCountry = countries.find(
     country => country.ccn3 === props.match.params.ccn3
   );
+  console.log("CountryInfo -> theCountry");
   return (
     <div>
-      <div class="col-7">
+      <div className="col-7">
         <h1>{theCountry.name.official}</h1>
-        <table class="table">
+        <table className="table">
           <thead></thead>
           <tbody>
             <tr>
-              <td style={{width: "30%"}}>Capital</td>
+              <td style={{ width: "30%" }}>Capital</td>
               <td>{theCountry.capital}</td>
             </tr>
             <tr>
@@ -21,6 +22,16 @@ function CountryInfo(props) {
               <td>
                 {theCountry.area}
                 <sup>2</sup>
+              </td>
+            </tr>
+            <tr>
+              <td>Borders</td>
+              <td>
+                <ul>
+                  {theCountry.borders.map(borderCountry => (
+                    <li key={borderCountry}>{borderCountry}</li>
+                  ))}
+                </ul>
               </td>
             </tr>
           </tbody>
