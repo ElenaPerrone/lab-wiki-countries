@@ -1,0 +1,9 @@
+.list-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.info-container {
+    width: 50vw;
+    height: 50vh;
+}
